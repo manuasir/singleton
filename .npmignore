@@ -1,0 +1,9 @@
+.git/
+.github/
+assets/
+node_modules/
+src/
+
+lib/test/
+tsconfig.json
+package-lock.json

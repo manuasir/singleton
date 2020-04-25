@@ -1,0 +1,33 @@
+{
+  "name": "tstl-singleton",
+  "version": "0.0.1",
+  "description": "Asynchronous Singleton generator through TSTL",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node lib/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samchon/singleton"
+  },
+  "keywords": [
+    "async",
+    "singleton",
+    "tstl"
+  ],
+  "author": "Jeongho Nam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samchon/singleton/issues"
+  },
+  "homepage": "https://github.com/samchon/singleton",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "tstl": "^2.4.6"
+  }
+}

@@ -1,9 +1,11 @@
 .git/
 .github/
-assets/
+.vscode/
 node_modules/
-src/
 
+src/
 lib/test/
+*.js.map
+
 tsconfig.json
 package-lock.json

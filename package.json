@@ -1,6 +1,6 @@
 {
   "name": "tstl-singleton",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Asynchronous Singleton generator through TSTL",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

@@ -7,13 +7,13 @@
 ## 1. Outline
 Asynchronous Singleton Generator using [TSTL](https://github.com/samchon/tstl).
 
-The `tstl-singleton` is an *Asynchronous Singleton Generator*, who guarantees the *asynchronous lazy constructor* to be called *"only one at time"*. The *"only one at time"* would always be kepted, even in the race condition, through [*Mutex*](https://tstl.dev/api/classes/std.mutex.html) and [*UniqueLock*](https://tstl.dev/api/classes/std.uniquelock.html) who are imlemented in the [**TSTL**](https://github.com/samchon/tstl).
+The `tstl-singleton` is an *Asynchronous Singleton Generator*, who guarantees the *asynchronous lazy constructor* to be called *"only one at time"*. The *"only one at time"* would always be kepted, even in the race condition, through [*Mutex*](https://tstl.dev/api/classes/std.mutex.html) and [*UniqueLock*](https://tstl.dev/api/classes/std.uniquelock.html) who are implemented in the [**TSTL**](https://github.com/samchon/tstl).
 
 
 
 
 ## 2. Installation
-Installing `tstl-singleton` in *NodeJS* is very easy. Just install with the `npm`.
+Installing `tstl-singleton` in *NodeJS* is very easy. Just install it using `NPM`.
 
 ```bash
 npm install --save tstl-singleton
@@ -70,7 +70,7 @@ declare module "tstl-singleton"
 }
 ```
 
-Using the `tstl-singleton` is also easy, too. Create a `Singleton` instance with your custom *lazy constructor* and get the promised value thorugh the `Singleton.get()` method. The `Singleton.get()` method would construct the return value following below logics:
+Using the `tstl-singleton` is very easy as well. Create a `Singleton` instance with your custom *lazy constructor* and get the promised value through the `Singleton.get()` method. The `Singleton.get()` method would construct the return value following the logic below:
 
   - At the first time: calls the *lazy constructor* and returns the value.
   - At the *lazy construction*: returns the pre-constructed value.
@@ -81,7 +81,7 @@ Using the `tstl-singleton` is also easy, too. Create a `Singleton` instance with
 If you want to reload the promised value, regardless of whether the *lazy construction* has been completed or not, call the `Singleton.reload()` method. It would call the *lazy constructor* forcibly, even if the *lazy construction* has been completed in sometime.
 
 ### 3.2. Demonstration
-As I've mentioned, `tstl-singleton` always ensures the *lazy constructor* to be called *"only one at time"*. As you can see from the below example code, even simultaneous call on the `Singleton.get()` has been occcured, the *lazy constructor* would be called *"only one at time"*.
+As previously mentioned, `tstl-singleton` always ensures the *lazy constructor* to be called *"only one at time"*. As you can see from the example code below, even simultaneous call on the `Singleton.get()` has been occcured, the *lazy constructor* would be called *"only one at time"*.
 
 ```typescript
 import { Singleton } from "tstl-singleton";
@@ -116,7 +116,7 @@ async function main(): Promise<void>
 > ```
 
 ### 3.3. Sample Case
-Loading remote data from the external API would be a heavy work for the remote server. Therefore, it would better to call the external API, only when it requires. In such reason, loading remote data from the external API can be the best use case for the `tstl-singleton`.
+Loading remote data from the external API would be a heavy work for the remote server. Therefore, it would be better to call the external API, only when it's required. In such reason, loading remote data from the external API can be the best use case for the `tstl-singleton`.
 
 With the *lazy constructor*, you can call the external API only when you need it. Also, you can avoid the vulnerable API callings by using the `Singleton.get()` method in the race condition, which helps you to call the external API *"only one at time"*.
 
